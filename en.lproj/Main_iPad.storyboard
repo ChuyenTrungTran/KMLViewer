@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="xlQ-fL-pYf">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="D8D-eP-sDV">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="xlQ-fL-pYf" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="emm-C4-SVE">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="l0f-Hz-0Ey" kind="relationship" relationship="rootViewController" id="U0g-Jm-Oet"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hos-WW-aT2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1159" y="-753"/>
+        </scene>
+        <!--Viewer View Controller-->
+        <scene sceneID="VEC-CR-4dZ">
+            <objects>
+                <viewController id="l0f-Hz-0Ey" customClass="KMLViewerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kIb-jw-B3n"/>
+                        <viewControllerLayoutGuide type="bottom" id="Fgi-cN-s1H"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Xge-SY-p5k">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6CY-TX-MF4">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="l0f-Hz-0Ey" id="t13-kB-JOL"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6CY-TX-MF4" firstAttribute="top" secondItem="Xge-SY-p5k" secondAttribute="top" id="O3d-fY-jpT"/>
+                            <constraint firstAttribute="trailing" secondItem="6CY-TX-MF4" secondAttribute="trailing" id="bIb-ho-Mh0"/>
+                            <constraint firstItem="6CY-TX-MF4" firstAttribute="leading" secondItem="Xge-SY-p5k" secondAttribute="leading" id="dZC-r3-slr"/>
+                            <constraint firstAttribute="bottom" secondItem="6CY-TX-MF4" secondAttribute="bottom" id="tSo-Ae-KZx"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="bAo-ZL-kS7"/>
+                    <connections>
+                        <outlet property="map" destination="6CY-TX-MF4" id="KWG-VD-Bqn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XWM-iV-UW8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-179" y="-753"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>
